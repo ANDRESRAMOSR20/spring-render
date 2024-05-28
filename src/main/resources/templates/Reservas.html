@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reservas Admin</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+     <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body class="bg-gradient-to-r from-blue-100 to-blue-200">
+	<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a th:href="@{/gestionAdmin}"><img th:src="@{/img/logo.jpg}" class="h-[65px] w-[115px] ml-4 mr-8"></a> 
+   <a class="hover:text-gray-300 text-xl" th:href="@{/salones/salonesvista}" style="text-decoration: none;">Salones</a>&nbsp;&nbsp;&nbsp;
+    <a class="hover:text-gray-300 text-xl" href="#"style="text-decoration: none;">Eventos</a>&nbsp;&nbsp;&nbsp;
+     <a class="hover:text-gray-300 text-xl" th:href="@{/acercadea}"style="text-decoration: none;">Acerca de</a>&nbsp;&nbsp;&nbsp;
+      <a class="hover:text-gray-300 text-xl" th:href="@{/contactanosa}"style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
+      <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-xl" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gestiones Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  th:href="@{/salones}">Gestion Salon</a>
+                    <a class="dropdown-item" th:href="@{/reservas}">Gestion Reservas</a>
+                    <a class="dropdown-item" th:href="@{/elementos}">Gestion Elementos</a>
+                    <a class="dropdown-item" th:href="@{/inquietudes}">Ver Inquietudes</a>
+                    <a class="dropdown-item"  th:href="@{/blogs}">Gestion blog</a>
+                </div>
+            </div>
+      <!--<a class="nav-link" href="#" th:href="@{/}">Registration and
+					Login Module</a>-->
+			<span class="ml-auto">
+			<div class="bg-green-600 w-[7px] rounded-full px-3 "><p class="text-white" th:text="${contadorSesiones}"></p></div>
+			<p class="font-bold">Administrador</p>
+			<span th:text="${username}"></span>
+			<a class="bg-red-600 p-2 rounded hover:text-gray-300 text-xl" th:href="@{/logout}"style="text-decoration: none;">Logout</a>
+			</span>
+</nav>
+	</header><br><br><br><br>
+<main>
+<div class="cont">
+        <div class="cont_main">
+             <a th:href="@{/salones/versalones}"  class="text-white font-sans text-2xl text-white font-sans bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-10 rounded-full"style="text-decoration: none;">
+				Ver salones&nbsp;&nbsp;<i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            </a><br><br>
+             <a th:href="@{/reservas/pdf}" target="_blank" class="text-white font-sans text-2xl text-white font-sans bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 my-10 rounded-full" style="text-decoration: none;">
+				Descargar reservas&nbsp;&nbsp;<i class="fa-solid fa-file-pdf" style="color: #ffffff;"></i>
+            </a>
+            
+            <table class="table table-striped m-3 tab">
+                <thead>
+                <tr class="text-blue-800 font-sans">
+                    <td><strong>Id</strong></td>
+                    <td><strong>Nombre</strong></td>
+                    <td><strong>Apellido</strong></td>
+                    <td><strong>Email</strong></td>
+                    <td><strong>Celular</strong></td>
+                    <td><strong>Salon</strong></td>
+                    <td><strong>Fecha reserva</strong></td>
+                    <td><strong>Estado</strong></td>
+                    <td><strong>Editar</strong></td>
+                    <td><strong>Eliminar</strong></td>
+                </tr>
+                </thead>
+                <tbody class="">
+                <tr th:each="reserva: ${reservas}">
+                    <td>[[ ${reserva.id} ]]</td>
+                    <td>[[ ${reserva.nombre} ]]</td>
+                    <td>[[ ${reserva.apellido} ]]</td>
+                    <td>[[ ${reserva.email} ]]</td>
+                    <td>[[ ${reserva.celular} ]]</td>
+                    <td>[[ ${reserva.salon.nombre} ]]</td>
+                    <td th:text="${#dates.format(reserva.fecha, 'dd-MM-yyyy')}"></td>
+                    <td id="estado" class="estado" th:text="${reserva.estado ? 'Reservada' : 'Pendiente'}"></td>
+                <td>
+				
+                        <a class="mx-3 text-warning" th:href="@{/reservas/edit/{id}(id = ${reserva.id})}">
+                            <i class="fa-solid fa-file-pen" style="color: #ffee33;"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="mx-3 text-danger" th:href="@{/reservas/delete/{id}(id = ${reserva.id})}">
+                            <i class="fa-solid fa-trash" style="color: #f74002;"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+  <div th:replace="footer :: footer"></div>
+ <script th:src="@{/Javas/ap.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+</body>
+</html>

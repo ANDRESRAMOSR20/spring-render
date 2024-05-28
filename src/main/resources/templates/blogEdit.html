@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Editar Blog</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/Css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="flex justify-center items-center bg-gradient-to-r from-orange-300 to-red-500 ">
+<main><br><br>
+    <div class="return">
+        <a href="javascript:history.back()" class="font-sans bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-full " style="text-decoration: none";>
+			 <i class="fa-solid fa-circle-left" style="color: #ffffff;"></i><br>
+			</a>
+    </div><br>
+    <div>
+		
+	</div>
+	<!-- <script th:src="@{/JS/App.js}"></script>-->
+    <div class="cont">
+        <form th:action="@{/blogs/update}" th:object="${blog}" method="post" enctype="multipart/form-data">
+            <input type="hidden" th:field="*{id}">
+            <div class="nombre">
+                <label for="name" class="text-white font-sans text-2xl">Nombre: </label>
+                <input type="text" id="name" th:field="*{titulo}" placeholder="Ingrese el titulo..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div><br>
+            <div class="apellido">
+                <label for="name" class="text-white font-sans text-2xl">Texto: </label>
+                <textarea type="text"  th:field="*{texto}"  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required></textarea>
+            </div><br>
+
+            <div class="name">
+                <label for="name" class="text-white font-sans text-2xl">Fecha: </label>
+                <input type="date" id="posicion" th:field="*{fecha}" placeholder="Ubicacion del salón..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+
+            <!--<div id="error-messages" th:classappend="${errorMessage} ? 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative' : ''" th:text="${errorMessage}">-->
+			 <div>
+        <label for="file" class="text-white font-sans text-2xl">Imagen Actual:</label>
+        <img class="w-[200px] h-[150px]"    th:if="${blog.imagen != null}" th:src="@{'/blogs/VerImagen/' + ${blog.id}}" alt="Imagen Actual del Salón"/>
+    </div>
+
+    <!-- Campo para cargar una nueva imagen -->
+    <div>
+        <label for="file" class="text-white font-sans text-2xl">Nueva Imagen:</label>
+        <input type="file" id="file" name="file" accept="image/*" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
+    </div>
+		</div><br>
+		</div><br>
+            <div class="button">
+                <button type="submit"> <strong class="text-white font-sans text-2xl text-white font-sans bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-10 rounded-full">Guardar Cambios</strong></button>
+            </div>
+        </form>
+    </div><br><br>
+</main>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+</body>
+
+</html>

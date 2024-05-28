@@ -1,0 +1,287 @@
+html {
+  scroll-behavior: smooth;
+}
+a{
+	text-decoration:none;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+
+.formus{
+  width:45%;
+  border-radius: 30px;
+  padding: 30px;
+  background-color: #EAEAEA;
+	
+}
+
+
+.divs{
+  text-align:center;
+  width:45%;
+  border-radius: 30px;
+  padding: 30px;
+  background-color: #EAEAEA;
+  margin-left:70px;
+	
+}
+
+
+.whatsapp-button {
+            position: fixed;
+            bottom: 4%; /* Ajusta la distancia desde la parte inferior según tus preferencias */
+            right: 4%; /* Ajusta la distancia desde la derecha según tus preferencias */
+            background-color: #25d366;
+            color: #fff;
+            width:70px;
+            height:70px;
+            padding-top:20px;;
+            border-radius: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            transition: bottom 0.3s; /* Agrega una transición suave */
+            z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+        }
+
+.whatsapp-button:hover::before {
+            content: "CONTACTANOS VIA WHATSAPP";
+            position: absolute;
+            bottom: 150%; /* Ajusta la distancia del texto al botón */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .whatsapp-button:hover::before {
+            opacity: 1;
+
+
+
+
+}
+
+
+.log {
+  flex: 1;
+  width: 1100px;
+  border-radius: 30px;
+  padding: 30px;
+  background-color: rgb(244, 244, 244);
+  box-shadow:5px 5px 10px 10px #888888;
+}
+
+
+.mitad-blanco-azul {
+  display: flex;
+  height: 100vh;
+  border-radius: 40px;
+  box-shadow:5px 5px 10px 10px #888888;
+  
+}
+
+.mitad-blanco-azul .mitad-blanco {
+  flex: 1;
+  width: 400px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding: 30px;
+  background-color: rgb(244, 244, 244);
+}
+
+.mitad-blanco-azul .mitad-azul {
+	width: 400px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  flex: 1;
+  padding: 30px;
+  background-color: rgb(47, 94, 255);
+}
+
+
+.btn-scrolltop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background: linear-gradient(to right, rgb(128, 255, 128), rgb(24, 24, 248));
+  color: white;
+  border: 1px solid white;
+  border-radius: 100%;
+  cursor: pointer;
+  transform: translateY(100px);
+  transition: 0.3s;
+}
+
+.btn-scrolltop-on {
+  transform: translateY(0);
+}
+
+
+.imgleft{
+	position :absolute;
+	right:0px;
+	width:400px;
+}
+
+
+.card2{
+	width:1000px;
+	
+	left:20px;
+}
+
+.amarillo {
+	width:80px;
+     background: linear-gradient(to right, #fde68a, #facc15);
+    color: black; /* Texto en color negro */
+    padding: 2px 4px; /* Espaciado alrededor del puntaje */
+    border-radius: 4px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+   text-align: center;
+   margin-left:305px;
+  
+}
+
+
+.azul {
+	width:80px;
+     background: linear-gradient(to right, #93c5fd, #3b82f6);
+    color: white; /* Texto en color blanco */
+    padding: 2px 4px; /* Espaciado alrededor del puntaje */
+    border-radius: 4px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center;
+    margin-left:305px;
+}
+
+.rojo{
+	width:120px;
+     background: linear-gradient(to right, #fca5a5, #dc2626);
+    color: white; /* Texto en color blanco */
+    border-radius: 4px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+
+	
+}
+.img1{
+	margin-left:610px;
+	width:200px;
+	height:200px;
+	border-radius:100%;
+}
+
+.verde{
+	width:80px;
+     background: linear-gradient(to right, #4ade80, #16a34a);
+    color: white; /* Texto en color blanco */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.gris{
+	width:80px;
+     background: linear-gradient(to right,#d1d5db,#9ca3af);
+    color: white; /* Texto en color blanco */
+    padding: 3px 4px; /* Espaciado alrededor del puntaje */
+    border-radius: 4px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+	text-align: center;
+	margin-left:305px;
+	
+}
+
+
+/* Establece la posición inicial fuera de la pantalla */
+.animate-slide {	
+    position:absolute;
+    top:0;
+    left: -100px; /* Fuera de la pantalla a la izquierda */
+    animation: slide-in 2s forwards; /* Aplica la animación "slide-in" durante 2 segundos y mantiene el estado final */
+}
+
+.animate-slider{
+	position:relative;
+    top:0;
+    left: -500px; /* Fuera de la pantalla a la izquierda */
+    animation: slide-in 2s forwards; 
+}
+
+@keyframes slide-in {
+    to {
+        left:50%;
+        transform: translateX(-50%); /* Alinea horizontalmente al centro */
+        }
+}
+
+
+.animate-slide-right {
+	width:100%;
+	height:10%;
+	margin-top:30px;
+    position:relative;
+    left: 150%; /* Fuera de la pantalla a la derecha */
+    animation: slide-in-right 2s forwards; /* Aplica la animación "slide-in-right" durante 2 segundos y mantiene el estado final */
+	z-index:1;
+}
+
+/* Animación para el div que se desliza desde la derecha */
+@keyframes slide-in-right {
+    to {
+        left: 50%; /* Mueve el div al centro de la pantalla */
+        transform: translateX(-50%); /* Alinea horizontalmente al centro */
+    }
+}
+
+
+
+/* Define la animación para aparecer desde arriba */
+@keyframes slide-from-top {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Aplica la animación al elemento que quieres que aparezca desde arriba */
+.animate-slide-from-top {
+  animation: slide-from-top 1s ease;
+}
+
+
+
+@keyframes slide-from-bottom {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Aplica la animación al elemento que deseas que aparezca desde abajo */
+.animate-slide-from-bottom {
+  animation: slide-from-bottom 1s ease;
+}
+
+
+

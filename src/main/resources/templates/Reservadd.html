@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Hacer reserva</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+   <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gradient-to-r from-blue-200 to-cyan-100">
+<main class=""><br><br>
+    <div class="return">
+        <a href="javascript:history.back()" class="font-sans bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-full m-4" style="text-decoration: none";>
+			 <i class="fa-solid fa-circle-left" style="color: #ffffff;"></i><br>
+			</a><br>
+			<a th:href="@{/salones/versalones}" class="font-sans bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full m-4" style="text-decoration: none";>
+			 Salones&nbsp;&nbsp;<i class="fa-solid fa-person-walking-arrow-loop-left" style="color: #ffffff;"></i><br>
+			</a>
+    </div><br>
+    <div>
+		
+<div th:if="${param.error}" class="p-2 w-[200px] flex justify-center items-center m-3 bg-red-300 border-red-400 rounded">
+   <p class="font-black text-red-700"  th:text="${param.error}"></p>
+</div>
+
+
+<div class="flex justify-center animate-slide-from-top">
+	<!-- <script th:src="@{/JS/App.js}"></script>-->
+<div class="mitad-blanco-azul">
+	<div class="mitad-blanco">
+        <form th:action="@{/reservas/save}" th:object="${reserva}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <div class="nombre">
+                <label for="name" class="text-black font-sans text-2xl">Nombres: </label>
+                <input type="text" id="name" th:field="*{nombre}" placeholder="Ingrese el nombre..." class="bg-gray-300 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div><br>
+            <div class="apellido">
+                <label for="name" class="text-black font-sans text-2xl">Apellido: </label>
+                <input type="text"  th:field="*{apellido}" placeholder="Apellidos...." class="bg-gray-300 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+             <div class="">
+              <input type="hidden" name="estado" th:value="${false}" />
+           </div>
+           <div class="apellido">
+                <label for="name" class="text-black font-sans text-2xl">Celular: </label>
+                <input type="number" th:field="*{celular}" placeholder="Telefono celular..." class="bg-gray-300 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+           </div>
+            <label for="name" class="text-black font-sans text-2xl">Email: </label>
+                <input type="text" th:value="${userEmail}" readonly placeholder="Telefono celular..." class="bg-gray-300 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+                <br>
+
+			<label for="fecha" class="text-black font-sans text-2xl">Fecha de reserva</label>
+			<input type="date" th:field="*{fecha}" class="bg-gray-200 appearance-none border-2 border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required> 
+			<div class="form-group">
+		    <label for="salones" class="text-black font-sans text-2xl">Salon:</label>
+		    <input type="text" id="salonid" name="salonid" th:value="${salonId}" readonly class="bg-gray-300 appearance-none border-2 border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">  
+		    <input type="text" id="nam" name="nam" th:value="${salonNombre}" readonly class="bg-gray-300 appearance-none border-2 border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">  
+		
+		
+
+			</div>
+			</div>
+			<div class="mitad-azul">
+			<img th:src="@{/img/targ.png}" class="">
+            <div class="nombre">
+                <label for="name" class="text-white font-sans text-2xl">portador tarjeta: </label>
+                <input type="text" name="nombreTarjeta"  placeholder="Ingrese el nombre..." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" required>
+            </div><br>
+            <div class="apellido">
+                <label for="name" class="text-white font-sans text-2xl">numero tarjeta: </label>
+                <input type="number" name="numeroTarjeta" placeholder="Numero tarjeta...." class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+            </div><br>
+             <div class="apellido">
+                <label for="name" class="text-white font-sans text-2xl">Codigo de seguridad: </label><br>
+                <input type="number" name="codigoTarjeta"  placeholder="CVV" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-[140px] py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
+           
+           <br> <br><label for="name" class="text-white font-sans text-2xl">Precio: </label>
+                 <p class=" text-white text-4xl font-bold" th:text="'$ '+*{salonPrecio}"></p>
+                 <br><div>
+                <button type="submit"> <strong class="text-white font-sans text-2xl text-white w-full ont-sans bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 my-10 rounded-xl">Reservar</strong></button>
+            </div>
+                <br>
+			</div>
+			</div>	 
+		
+          </form>
+          </div>
+    </div><br><br>
+    
+    
+    <div th:if="${errorTarjeta}" class="alert alert-danger" role="alert">
+    <span th:text="${errorTarjeta}"></span>
+</div>
+
+<!-- Mostrar mensaje de error de saldo -->
+<div th:if="${errorSaldo}" class="alert alert-danger" role="alert">
+    <span th:text="${errorSaldo}"></span>
+</div>
+</main>  
+
+     
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script th:src="@{/Javas/ap.js}"></script>
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+</body>
+
+</html>
