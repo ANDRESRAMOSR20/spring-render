@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Teusaquillo Eventos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+     <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body class="">
+	<header class="animate-slide-from-top">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light animate-slide-bottom">
+		 <a th:href="@{/gestionAdmin}"><img th:src="@{/img/logo.jpg}" class="h-[65px] w-[115px] ml-4 mr-8"></a>
+   <a class="hover:text-gray-300 text-xl" th:href="@{/salones/salonesvista}" style="text-decoration: none;">Salones</a>&nbsp;&nbsp;&nbsp;
+    <a class="hover:text-gray-300 text-xl" th:href="@{/blogs/blogsA}"style="text-decoration: none;">Eventos</a>&nbsp;&nbsp;&nbsp;
+     <a class="hover:text-gray-300 text-xl"  th:href="@{/acercadea}"style="text-decoration: none;">Acerca de</a>&nbsp;&nbsp;&nbsp;
+      <a class="hover:text-gray-300 text-xl" th:href="@{/contactanosa}"style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
+	  <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-xl" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gestiones Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  th:href="@{/salones}">Gestion Salon</a>
+                    <a class="dropdown-item" th:href="@{/reservas}">Gestion Reservas</a>
+                    <a class="dropdown-item" th:href="@{/elementos}">Gestion Elementos</a>
+                    <a class="dropdown-item" th:href="@{/inquietudes}">Ver Inquietudes</a>
+                      <a class="dropdown-item" th:href="@{/tarjetas}">Tarjetas de credito</a>
+                       <a class="dropdown-item"  th:href="@{/blogs}">Gestion blog</a>
+                </div>
+            </div>
+      <!--<a class="nav-link" href="#" th:href="@{/}">Registration and
+					Login Module</a>-->
+			<span class="ml-auto">
+				<div class="bg-green-500 w-[7px] rounded-full px-3 "><p  class="flex justify-center text-white"  th:text="${contadorSesiones}"></p></div>
+			<p class="font-bold">Administrador</p>
+			<span sec:authentication="principal.username"></span>
+			<a class="bg-red-600 p-2 rounded hover:text-gray-300 text-xl" th:href="@{/logout}"style="text-decoration: none;">Logout</a>
+			</span>
+</nav>
+<div class="filter brightness-50">
+	<div  id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
+        <div id="myCarousel" class="carousel slide " data-ride="carousel">
+            <!-- Indicadores -->
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ul>
+
+            <!-- Imágenes del carrusel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/img/img1.jpg}" class=" d-block w-100" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/img/img2.jpg}" class="d-block w-100"  alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/img/img4.jpg}"  class="d-block w-100" alt="Imagen 3">
+                </div>
+                  <div class="carousel-item">
+                    <img th:src="@{/img/img3.jpeg}"  class="d-block w-100"alt="Imagen 4">
+                </div>
+            </div>
+
+            <!-- 
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+			<i class="fa-solid fa-circle-chevron-left fa-3x" style="color: #ffffff;"></i>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class="fa-solid fa-circle-chevron-left fa-rotate-180 fa-3x" style="color: #ffffff;"></i>
+                <span class="sr-only">Siguiente</span>
+            </a>
+            -->
+        </div>
+    </div></div><br><br>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-white text-7xl text-center">
+		Bienvenidos a teusaquillo eventos<br><br>
+		<hr class="h-[1px] bg-white"><br>
+		<p class="font-sans text-2xl">alquiler de salones para eventos<p>
+	</div>
+</div>
+   	</header>
+<main class="p-10">    
+    
+	
+	<div class="card p-3 hover:scale-110 transform transition-transform">
+        <img class="p-3" th:src="@{/img/img4.jpg}" alt="acerca de ">
+  <div class="card-body">
+    
+    <p class="card-text text-lg">¡Bienvenido a teusaquillo eventos , tu destino para eventos inolvidables! Nuestros salones de eventos son el lugar perfecto para hacer realidad tus sueños de celebración. Ya sea una boda elegante, una fiesta de cumpleaños emocionante o una reunión corporativa, estamos aquí para hacer que tu evento sea excepcional.
+
+Descubre espacios impresionantes y versátiles que se adaptan a tus necesidades. Nuestros salones están diseñados para satisfacer tus deseos y crear un ambiente único para cada ocasión. Desde la decoración hasta los servicios adicionales, estamos comprometidos a hacer de tu evento un éxito.
+
+Confía en nosotros para proporcionarte la mejor experiencia de alquiler de salones de eventos. Reserva hoy y déjanos hacer que tu fiesta sea inolvidable. ¡Celebra con estilo en Party Rental!</p>
+Si quieres conocer más información sobre estos módulos te invitamos a consultar las infografías disponibles al final de esta sección.</p>
+    <br><br><p class="card-text"><small class="text-muted">2/11/2023</small></p>
+  </div>
+  
+  </div><br><br>
+  <br><br><br>
+	<div class="flex justify-center items-center">
+	<div id="video1"></div>&nbsp;&nbsp;&nbsp;
+	<div id="video2"></div>&nbsp;&nbsp;&nbsp;
+	<div id="video3"></div>&nbsp;&nbsp;&nbsp;
+	</div>
+ </div></div><br><br>	
+  <button class="btn-scrolltop" id="btn_scrolltop">
+    <i class="fas fa-chevron-up fa-lg fa-beat"></i>
+  </button>
+</main>
+ <div th:replace="footer :: footer"></div>
+ <script th:src="@{/Javas/ap.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+</body>
+</html>

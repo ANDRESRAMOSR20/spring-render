@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contactanos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+     <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body class="">
+	<header class="animate-slide-from-top">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light animate-slide-bottom">
+		 <a th:href="@{/gestionAdmin}"><img th:src="@{/img/logo.jpg}" class="h-[65px] w-[115px] ml-4 mr-8"></a>
+   <a class="hover:text-gray-300 text-xl" th:href="@{/salones/salonesvista}" style="text-decoration: none;">Salones</a>&nbsp;&nbsp;&nbsp;
+    <a class="hover:text-gray-300 text-xl" th:href="@{/blogs/blogsA}"style="text-decoration: none;">Eventos</a>&nbsp;&nbsp;&nbsp;
+     <a class="hover:text-gray-300 text-xl"  th:href="@{/acercadea}"style="text-decoration: none;">Acerca de</a>&nbsp;&nbsp;&nbsp;
+      <a class="hover:text-gray-300 text-xl" th:href="@{/contactanosa}"style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
+	  <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-xl" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gestiones Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  th:href="@{/salones}">Gestion Salon</a>
+                    <a class="dropdown-item" th:href="@{/reservas}">Gestion Reservas</a>
+                    <a class="dropdown-item" th:href="@{/elementos}">Gestion Elementos</a>
+                    <a class="dropdown-item" th:href="@{/inquietudes}">Ver Inquietudes</a>
+                    <a class="dropdown-item"  th:href="@{/blogs}">Gestion blog</a>
+                </div>
+            </div>
+            
+            <span class="ml-auto">
+				<div class="bg-green-500 w-[7px] rounded-full px-3 "><p  class="flex justify-center text-white"  th:text="${contadorSesiones}"></p></div>
+			<p class="font-bold">Administrador</p>
+			<span sec:authentication="principal.username"></span>
+			<a class="bg-red-600 p-2 rounded hover:text-gray-300 text-xl" th:href="@{/logout}"style="text-decoration: none;">Logout</a>
+			</span>
+</nav>
+
+<div>
+	
+	<img class="w-full filter brightness-50" th:src="@{/img/fot3.jpeg}" alt="imgaen nav"><img>
+	<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-white text-7xl text-center">
+		<br><br><br><br>Pongase en contacto con nosotros<br><br>
+		<hr class="h-[1px] bg-white"><br>
+		<p class="font-sans text-2xl">Encuentre aqui nuestros horarios y redes<p>
+	</div>
+</div>
+	</header><br><br><br><br>
+
+<main class="p-10">
+
+<div class="imgleft"><img class="w-[380px] rounded-full pt-5"  th:src="@{/img/fot6.jpg}" alt="imgaen nav"><img></div>
+
+	<div class="card2 p-3">
+        <h1 class="text-font-sans text-4xl animate-slide-from-top pl-3">Preguntas frecuentes</h1><br><br><br>
+ 
+<ul>
+    <li class="mb-8">
+        <strong class="text-lg">¿Qué medidas de seguridad tienen implementadas en sus salones para eventos?</strong>
+        <p>En [Nombre del Salón], la seguridad de nuestros clientes es nuestra principal prioridad. Contamos con personal de seguridad, sistemas de cámaras de vigilancia y salidas de emergencia claramente señalizadas para garantizar un entorno seguro durante los eventos.</p>
+    </li>
+
+    <li class="mb-8">
+        <strong class="text-lg">¿Puedo personalizar la iluminación y la decoración del salón para que coincida con el tema de mi evento?</strong>
+        <p>¡Absolutamente! Ofrecemos flexibilidad para que nuestros clientes personalicen la iluminación y la decoración según sus preferencias y el tema de su evento. Trabajaremos contigo para crear la atmósfera perfecta.</p>
+    </li>
+
+    <li class="mb-8">
+        <strong class="text-lg">¿Tienen opciones de catering disponibles o puedo traer mi propio servicio de catering?</strong>
+        <p>Ofrecemos servicios de catering que se pueden personalizar según tus necesidades. Sin embargo, también damos la bienvenida a la posibilidad de que traigas tu propio servicio de catering si tienes una preferencia específica.</p>
+    </li>
+
+    <li class="mb-8">
+        <strong class="text-lg">¿Cuánto espacio tienen para eventos al aire libre?</strong>
+        <p>Contamos con un hermoso espacio al aire libre que puede adaptarse a eventos al aire libre, ya sea para ceremonias, recepciones o actividades sociales. Este espacio se puede personalizar según tus requisitos.</p>
+    </li>
+
+    <li class="mb-8">
+        <strong class="text-lg">¿Hay opciones de transporte cerca del salón para eventos?</strong>
+        <p>Sí, estamos convenientemente ubicados cerca de opciones de transporte público y ofrecemos opciones de estacionamiento para los asistentes. También podemos proporcionar información sobre servicios de transporte privado si es necesario.</p>
+    </li>
+
+    <li class="mb-8">
+        <strong class="text-lg">¿Cuánto tiempo antes debo reservar para garantizar la disponibilidad del salón?</strong>
+        <p>Recomendamos que realices tu reserva con la mayor anticipación posible para asegurar la disponibilidad, especialmente en fechas populares. Sin embargo, siempre hacemos nuestro mejor esfuerzo para acomodar solicitudes de último minuto según la disponibilidad.</p>
+    </li>
+</ul>
+  </div><br><br><br>
+  
+
+</main>
+ <div th:replace="footer :: footer"></div>
+ <script th:src="@{/Javas/ap.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Botpress</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logotipo.png}" type="image/x-icon">
+     <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body class="">
+	<header class="animate-slide-from-top">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a th:href="@{/}">
+		    <img th:src="@{/img/logotipo.png}" class="h-[80px] w-[80px] ml-4 mr-8" style="border-radius: 50%; object-fit: cover;">
+		</a>
+		 <a class="hover:text-gray-300 text-xl" th:href="@{/salones/userSalones}" style="text-decoration: none;">shop</a>&nbsp;&nbsp;&nbsp;
+		  
+		    <a class="hover:text-gray-300 text-xl" th:href="@{/contactanos}" style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
+		<a class="bg-blue-600 p-2 rounded hover:text-gray-300 text-xl" href="#" th:href="@{/login}"style="text-decoration: none;">Login</a>
+</nav>
+<div class="filter brightness-50">
+	<div  id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
+        <div id="myCarousel" class="carousel slide " data-ride="carousel">
+            <!-- Indicadores -->
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ul>
+
+            <!-- Imágenes del carrusel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/img/fondo1.jpg}" class=" d-block w-100" alt="Imagen 1">
+
+            </div>
+
+            <!-- 
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+			<i class="fa-solid fa-circle-chevron-left fa-3x" style="color: #ffffff;"></i>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <i class="fa-solid fa-circle-chevron-left fa-rotate-180 fa-3x" style="color: #ffffff;"></i>
+                <span class="sr-only">Siguiente</span>
+            </a>
+            -->
+        </div>
+    </div></div><br><br>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-white text-7xl text-center">
+		Bienvenido a Botpress<br><br>
+		<hr class="h-[3px] bg-white"><br>
+		<p class="font-sans text-2xl">tu marketplace de chatbots<p>
+	</div>
+</div>
+   	</header>
+<main class="p-10">    
+    
+	
+	
+  <div class="card-body">
+    
+    <p class="card-text text-lg">	
+	¡Bienvenido a Botpress!
+	
+	En el dinámico mundo digital actual, contar con las herramientas adecuadas puede marcar la diferencia entre el éxito y la invisibilidad. En Botpress, nos especializamos en brindarte soluciones tecnológicas innovadoras y personalizadas para llevar tu negocio al siguiente nivel.</p>
+    <br><br><p class="card-text"><small class="text-muted">20/06/2024</small></p>
+  </div>
+  
+  </div><br><br>
+  <br><br><br>
+	
+ </div></div><br><br>	
+  <button class="btn-scrolltop" id="btn_scrolltop">
+    <i class="fas fa-chevron-up fa-lg fa-beat"></i>
+  </button>
+<a href="https://api.whatsapp.com/send?phone=573203361049" target="_blank" class="whatsapp-button">
+    <i class="fab fa-whatsapp fa-bounce fa-2xl"></i>
+</a>
+</main>
+ <div th:replace="footer :: footer"></div>
+ <script th:src="@{/Javas/ap.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+</body>
+</html>

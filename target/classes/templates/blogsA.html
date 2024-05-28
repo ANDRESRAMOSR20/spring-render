@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>EVENTOS BLOG</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+     <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body class="">
+	<header >
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		 <a th:href="@{/index}"><img th:src="@{/img/logo.jpg}" class="h-[65px] w-[115px] ml-4 mr-8"></a>
+     <a class="hover:text-gray-300 text-xl" th:href="@{/salones}" style="text-decoration: none;">Salones</a>&nbsp;&nbsp;&nbsp;
+    <a class="hover:text-gray-300 text-xl" href="#"style="text-decoration: none;">Eventos</a>&nbsp;&nbsp;&nbsp;
+     <a class="hover:text-gray-300 text-xl" th:href="@{/acercadea}" style="text-decoration: none;">Acerca de</a>&nbsp;&nbsp;&nbsp;
+      <a class="hover:text-gray-300 text-xl" th:href="@{/contactanosa}" style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
+		 <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-xl" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gestiones Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item"  th:href="@{/salones}">Gestion Salon</a>
+                    <a class="dropdown-item" th:href="@{/reservas}">Gestion Reservas</a>
+                    <a class="dropdown-item" th:href="@{/elementos}">Gestion Elementos</a>
+                    <a class="dropdown-item" th:href="@{/inquietudes}">Ver Inquietudes</a>
+                    <a class="dropdown-item"  th:href="@{/blogs}">Gestion blog</a>
+                </div>
+            </div>
+		
+      <!--<a class="nav-link" href="#" th:href="@{/}">Registration and
+					Login Module</a>-->
+		    
+			<span class="ml-auto">
+			<p class="font-bold">Usuario</p>
+			<span th:text="${username}">N/A</span>
+			<a class="bg-red-600 p-2 rounded hover:text-gray-300 text-xl" th:href="@{/logout}"style="text-decoration: none;">Logout</a>
+			</span>
+</nav>
+<div>
+	
+	<img class="w-full filter brightness-50" th:src="@{/img/blogs.jpeg}" alt="imgaen nav"><img>
+	<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-white text-7xl text-center">
+		<br><br><br><br>Puedes echar un vistazo a algunos eventos y noticias!<br><br>
+		<hr class="h-[1px] bg-white"><br>
+		<p class="font-sans text-2xl">En nuestro blog puedes estar al dia<p>
+	</div>
+</div>
+	</header><br><br><br>
+<main class="p-10 animate-slide-from-bottom">
+
+
+<!-- Resto de tu código HTML -->
+
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- Iterar sobre los salones y mostrar tarjetas -->
+        <div th:each="blog : ${blogs}" class="col-md-12 mb-4">
+            <div class="card flex-row rounded p-4" style="width: calc(100% - 40px); margin: 20px;">
+                <!-- Imagen a la derecha -->
+                <img class="card-img-top h-[420px] w-[400px] rounded" th:if="${blog.imagen != null}" th:src="@{'/blogs/VerImagen/' + ${blog.id}}" alt="Imagen blog"/>
+
+                <div class="card-body">
+                    <!-- Título y contenido a la izquierda -->
+                    <h5 class="card-title text-blue-400 text-2xl" th:text="${blog.titulo}"></h5>
+                    <p class="card-text" th:text="${blog.texto}"></p><BR>
+
+                    <!-- Fecha en el pie de la tarjeta -->
+                    <p class="text-gray-500" th:text="${#dates.format(blog.fecha, 'dd-MM-yyyy')}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+ <a href="https://api.whatsapp.com/send?phone=3017368837" target="_blank" class="whatsapp-button">
+    <i class="fab fa-whatsapp fa-bounce fa-2xl"></i>
+</a>               
+                
+</main>
+
+ <script th:src="@{/Javas/ap.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+</body>
+</html>

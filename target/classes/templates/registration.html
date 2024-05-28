@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registrate</title>
+   <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+       <link rel="stylesheet" th:href="@{/css/Styles.css}">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 p-5">
+<a class="bg-yellow-300 p-3 rounded-full" th:href="@{/Login}" style="text-decoration: none"><i class="fa-solid fa-arrow-left" style="color: #000000;"></i>&nbsp;&nbsp;Volver</a>
+	<main class="animate-slide-from-top">
+	<!-- Create HTML registration form -->
+<div class="flex justify-center items-center">	
+<div class="flex justify-center items-center  w-[700px]">
+	<div class = "log">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+
+				<!-- success message -->
+				<div th:if="${param.success}">
+					<div class="alert alert-info">Registrado correctamente!</div>
+				</div>
+
+				<h1 class="text-black text-5xl">Registrate</h1>
+				<br>
+				<form th:action="@{/registration}" method="post" th:object="${user}">
+					<div class="form-group">
+						<label class="control-label" for="firstName">Nombres</label>
+						<input id="firstName" class="form-control" placeholder="Ingrese sus nombres..." th:field="*{firstName}"
+							required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="lastName">Apellidos</label> <input
+							id="lastName" class="form-control" placeholder="Ingrese sus apellidos..." th:field="*{lastName}"
+							required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="email"> Email </label> <input
+							id="email" class="form-control" placeholder="Ingrese su email..." th:field="*{email}" required
+							autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="password"> Contraseña </label> <input
+							id="password" class="form-control" type="password"
+							th:field="*{password}" placeholder="Ingrese su contraseña..." required autofocus="autofocus" />
+					</div>
+										<div class="form-group">
+						<button type="submit" class="btn bg-blue-500">Registrar</button><br><br>
+						<span>Ya estas registrado? <a class="text-blue-600 hover:text-blue-700" href="/" th:href="@{/login}">inicia sesion</a></span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		</div>
+		</div>
+	</div>
+	</main>
+</body>
+</html>

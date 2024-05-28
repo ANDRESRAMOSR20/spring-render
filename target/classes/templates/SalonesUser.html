@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Teusaquillo Eventos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+     <link rel="stylesheet" th:href="@{/css/Styles.css}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/a8699accd2.js" crossorigin="anonymous"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body class="">
+	<header >
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		 <a th:href="@{/index}"><img th:src="@{/img/logo.jpg}" class="h-[65px] w-[115px] ml-4 mr-8"></a>
+     <a class="hover:text-gray-300 text-xl" th:href="@{/salones/versalones}" style="text-decoration: none;">Salones</a>&nbsp;&nbsp;&nbsp;
+    <a class="hover:text-gray-300 text-xl" th:href="@{/blogs/verblogs}" style="text-decoration: none;">Eventos</a>&nbsp;&nbsp;&nbsp;
+     <a class="hover:text-gray-300 text-xl" th:href="@{/acercadeu}"style="text-decoration: none;">Acerca de</a>&nbsp;&nbsp;&nbsp;
+      <a class="hover:text-gray-300 text-xl" th:href="@{/contactanosu}"style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
+		
+      <!--<a class="nav-link" href="#" th:href="@{/}">Registration and
+					Login Module</a>-->
+		    
+			<span class="ml-auto">
+			<p class="font-bold">Usuario</p>
+			<span th:text="${username}">N/A</span>
+			<a class="bg-red-600 p-2 rounded hover:text-gray-300 text-xl" th:href="@{/logout}"style="text-decoration: none;">Logout</a>
+			</span>
+</nav>
+<div>
+	
+	<img class="w-full filter brightness-50" th:src="@{/img/fot2.jpg}" alt="imgaen nav"><img>
+	<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-white text-7xl text-center">
+		<br><br><br><br>Explora nuestra variedad de salones<br><br>
+		<hr class="h-[1px] bg-white"><br>
+		<p class="font-sans text-2xl">Reserva el tuyo ya!<p>
+	</div>
+</div>
+	</header><br><br><br>
+<main class="p-10 animate-slide-from-bottom">
+
+
+<form action="#" method="get" class="mb-3">
+    <div class="form-group">
+        <label for="ciudadSelect" class="font-sans text-xl text-gray-700">Filtrar por Ciudad:</label>
+        <select id="ciudadSelect" name="Ubicacion" class="form-control">
+            <option value="" selected>Todas las ciudades</option>
+            <!-- Itera sobre la lista de ciudades proporcionada por el controlador -->
+            <option th:each="ciudad : ${ciudades}" th:value="${ciudad}" th:text="${ciudad}"></option>
+        </select>
+        <button type="submit" class="bg-blue-500 rounded p-2 m-3 hover:bg-blue-600 text-white font-bold">Filtrar</button>
+    </div>
+</form>
+
+<!-- Resto de tu código HTML -->
+
+
+	 <a th:href="@{/reservas/reservasu}"  class="text-white font-sans text-2xl text-white font-sans bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-10 rounded-full"style="text-decoration: none;">
+				Ver Reservas&nbsp;&nbsp;<i class="fa-solid fa-eye" style="color: #ffffff;"></i>
+            </a><br><br>
+	<div class="">
+        <div class="row justify-content-center">
+            <!-- Iterar sobre los salones y mostrar tarjetas -->
+            <div th:each="salon : ${salones}" class="col-md-4">
+                <div class="bg-gray-200 p-3 h-[470px] w-[400px]rounded ">
+                    <img class="h-[220px] w-[420px]"th:if="${salon.imagen != null}" th:src="@{'/salones/VerImagen/' + ${salon.id}}" alt="Imagen Salón"/>
+                    <div class="card-body">
+                        <h5 class="text-blue-400 text-2xl" th:text="${salon.nombre}" ></h5>
+                        <p class="disponi" th:text="${salon.disponibilidad}"></p>
+                        <p class="text-green-500"   th:text="'$'+${salon.precio}"></p>
+                        <p class="text-black font-bold"  th:text="${salon.capacidad}+'  Personas'"></p>
+                        <p th:text="${salon.Ubicacion}" class="card-text"></p><br>
+                        <!-- Botón para abrir el modal -->
+                        <button type="button" class="rounded p-2 bg-blue-400 hover:bg-blue-600" data-toggle="modal" th:data-target="'#modal' + ${salon.id}">
+                            Ver Detalles
+                        </button>
+                    </div>
+                </div>
+                <br>
+                
+                <!-- Modal para mostrar detalles del salón -->
+                <div th:id="'modal' + ${salon.id}" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="text-blue-400 text-2xl" th:text="${salon.nombre}"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+								<p th:text="'Codigo de sala:  '+${salon.id}"></p>
+                                <p th:text="'Capacidad(personas):  '+${salon.capacidad}"></p>
+                               <p  th:text="'Precio(COP):  '+${salon.precio}"></p>
+                                <p th:text="'Ciudad:  '+${salon.Ubicacion}"></p>
+                                <p th:text="'Barrio:  '+${salon.barrio}" class="card-text"></p>
+                        		<p th:text="'Direccion:  '+${salon.direccion}" class="card-text"></p><br>
+                                <!-- Otros detalles del salón si los tienes -->
+                                 <div class="bg-gray-200 h-[1px]"></div><br>
+ 								<p class="text-yellow-700 text-xl">Servicios</p><br>
+                                <li th:each="elementos : ${salon.elementos}" th:text="${elementos.nombre}"></li><br>
+                                <!-- Otros detalles del salón si los tienes -->
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="rounded p-2 bg-gray-300 hover:bg-gray-400" data-dismiss="modal">Cerrar</button>
+								     <a th:href="@{/reservas/new(salonid=${salon.id}, salonNombre=${salon.nombre})}">
+								    <button type="button" class="rounded p-2 bg-blue-500 hover:bg-blue-700">Reservar</button>
+								</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                
+ <a href="https://api.whatsapp.com/send?phone=3017368837" target="_blank" class="whatsapp-button">
+    <i class="fab fa-whatsapp fa-bounce fa-2xl"></i>
+</a>               
+                
+</main>
+
+ <script th:src="@{/Javas/ap.js}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+</body>
+</html>
