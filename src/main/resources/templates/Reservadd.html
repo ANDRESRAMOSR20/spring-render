@@ -2,7 +2,7 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Hacer reserva</title>
+    <title>realizar compra</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
 			 <i class="fa-solid fa-circle-left" style="color: #ffffff;"></i><br>
 			</a><br>
 			<a th:href="@{/salones/versalones}" class="font-sans bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full m-4" style="text-decoration: none";>
-			 Salones&nbsp;&nbsp;<i class="fa-solid fa-person-walking-arrow-loop-left" style="color: #ffffff;"></i><br>
+			 Productos&nbsp;&nbsp;<i class="fa-solid fa-person-walking-arrow-loop-left" style="color: #ffffff;"></i><br>
 			</a>
     </div><br>
     <div>
@@ -56,10 +56,10 @@
                 <input type="text" th:value="${userEmail}" readonly placeholder="Telefono celular..." class="bg-gray-300 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required>
                 <br>
 
-			<label for="fecha" class="text-black font-sans text-2xl">Fecha de reserva</label>
+			<label for="fecha" class="text-black font-sans text-2xl">Fecha de compra</label>
 			<input type="date" th:field="*{fecha}" class="bg-gray-200 appearance-none border-2 border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"required> 
 			<div class="form-group">
-		    <label for="salones" class="text-black font-sans text-2xl">Salon:</label>
+		    <label for="salones" class="text-black font-sans text-2xl">compra:</label>
 		    <input type="text" id="salonid" name="salonid" th:value="${salonId}" readonly class="bg-gray-300 appearance-none border-2 border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">  
 		    <input type="text" id="nam" name="nam" th:value="${salonNombre}" readonly class="bg-gray-300 appearance-none border-2 border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">  
 		

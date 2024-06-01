@@ -21,11 +21,16 @@
 		<a th:href="@{/}">
 				    <img th:src="@{/img/logotipo.png}" class="h-[80px] w-[80px] ml-4 mr-8" style="border-radius: 50%; object-fit: cover;">
 				</a>
-  <a class="hover:text-gray-300 text-xl" th:href="@{/salones/userSalones}" style="text-decoration: none;">shop</a>&nbsp;&nbsp;&nbsp;
+  <a class="hover:text-gray-300 text-xl" th:href="@{/salones/versalones}" style="text-decoration: none;">shop</a>&nbsp;&nbsp;&nbsp;
     
       <a class="hover:text-gray-300 text-xl" th:href="@{/contactanos}" style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
-		<a class="bg-green-600 p-2 rounded hover:text-gray-300 text-xl" href="#" th:href="@{/login}"style="text-decoration: none;">Login</a>
-
+	  		<span class="ml-auto">
+	  		<div class="bg-green-600 w-[7px] rounded-full px-3 "><p class="text-white flex justify-center" th:text="${contadorSesiones}"></p></div>
+	  		<p class="font-bold">Usuario</p>
+	  		 <span th:text="${username}">N/A</span>
+	  		<a class="bg-red-600 p-2 rounded hover:text-gray-300 text-xl" th:href="@{/logout}"style="text-decoration: none;">Logout</a>
+	  		</span>
+	  
 </nav>
 
 <div>
@@ -146,7 +151,7 @@
 	
 </div>
 </div>
-<a href="https://api.whatsapp.com/send?phone=3017368837" target="_blank" class="whatsapp-button">
+<a href="https://api.whatsapp.com/send?phone=573203361049" target="_blank" class="whatsapp-button">
     <i class="fab fa-whatsapp fa-bounce fa-2xl"></i>
 </a>
 </main>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Reservas User</title>
+    <title>Compras</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" th:href="@{/css/Styles.css}">
-    <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{/img/logotipo.png}" type="image/x-icon">
      <link rel="stylesheet" th:href="@{/css/Styles.css}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,11 +18,11 @@
 <body class="bg-gradient-to-r from-blue-100 to-blue-200">
 	<header >
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		 <a th:href="@{/index}"><img th:src="@{/img/logo.jpg}" class="h-[65px] w-[115px] ml-4 mr-8"></a>
-      <a class="hover:text-gray-300 text-xl" th:href="@{/salones/versalones}" style="text-decoration: none;">Salones</a>&nbsp;&nbsp;&nbsp;
-    <a class="hover:text-gray-300 text-xl" th:href="@{/blogs/verblogs}" style="text-decoration: none;">Eventos</a>&nbsp;&nbsp;&nbsp;
-     <a class="hover:text-gray-300 text-xl" th:href="@{/acercadeu}"style="text-decoration: none;">Acerca de</a>&nbsp;&nbsp;&nbsp;
-      <a class="hover:text-gray-300 text-xl" th:href="@{/contactanosu}"style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
+		<a th:href="@{/index}">
+							<img th:src="@{/img/logotipo.png}" class="h-[80px] w-[80px] ml-4 mr-8" style="border-radius: 50%; object-fit: cover;">
+						</a> 
+      <a class="hover:text-gray-300 text-xl" th:href="@{/salones/versalones}" style="text-decoration: none;">Regresar</a>&nbsp;&nbsp;&nbsp;
+    
 		
       <!--<a class="nav-link" href="#" th:href="@{/}">Registration and
 					Login Module</a>-->
@@ -38,10 +38,10 @@
 <div class="cont">
         <div class="cont_main">
              <a th:href="@{/salones/versalones}"  class="text-white font-sans text-2xl text-white font-sans bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-10 rounded-full"style="text-decoration: none;">
-				Ver salones&nbsp;&nbsp;<i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+				Ver productos&nbsp;&nbsp;<i class="fa-solid fa-plus" style="color: #ffffff;"></i>
             </a><br><br>
              <a th:href="@{/reservas/pdf}" target="_blank" class="text-white font-sans text-2xl text-white font-sans bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 my-10 rounded-full" style="text-decoration: none;">
-				Descargar reservas&nbsp;&nbsp;<i class="fa-solid fa-file-pdf" style="color: #ffffff;"></i>
+				Descargar compra&nbsp;&nbsp;<i class="fa-solid fa-file-pdf" style="color: #ffffff;"></i>
             </a>
             
             <table class="table table-striped m-3 tab">
@@ -52,8 +52,8 @@
                     <td><strong>Apellido</strong></td>
                     <td><strong>Email</strong></td>
                     <td><strong>Celular</strong></td>
-                    <td><strong>Salon</strong></td>
-                    <td><strong>Fecha reserva</strong></td>
+                    <td><strong>compra</strong></td>
+                    <td><strong>Fecha Compra</strong></td>
                     <td><strong>Estado</strong></td>
                     <td><strong>Eliminar</strong></td>
                 </tr>

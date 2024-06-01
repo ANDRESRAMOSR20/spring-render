@@ -18,37 +18,34 @@
 <body class="">
 	<header class="animate-slide-from-top">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a th:href="@{/}">
-		    <img th:src="@{/img/logotipo.png}" class="h-[80px] w-[80px] ml-4 mr-8" style="border-radius: 50%; object-fit: cover;">
-		</a>
-		 		 <a class="hover:text-gray-300 text-xl" th:href="@{/salones/userSalones}" style="text-decoration: none;">Salones</a>&nbsp;&nbsp;&nbsp;
-		 		  
-		 		    <a class="hover:text-gray-300 text-xl" th:href="@{/contactanos}" style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
-		<a class="bg-blue-600 p-2 rounded hover:text-gray-300 text-xl" href="#" th:href="@{/login}"style="text-decoration: none;">Login</a>
+		<a th:href="@{/index}">
+							    <img th:src="@{/img/logotipo.png}" class="h-[80px] w-[80px] ml-4 mr-8" style="border-radius: 50%; object-fit: cover;">
+							</a>
+   <a class="hover:text-gray-300 text-xl" th:href="@{/salones/versalones}" style="text-decoration: none;">Shop</a>&nbsp;&nbsp;&nbsp;
+
+      <a class="hover:text-gray-300 text-xl" th:href="@{/contactanosu}"style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
 		
-		<span class="ml-auto">
-					
-					<p class="font-bold">Usuario</p>
-					 <span th:text="${username}">N/A</span>
-					<a class="bg-red-600 p-2 rounded hover:text-gray-300 text-xl" th:href="@{/logout}"style="text-decoration: none;">Logout</a>
-					</span>
+      <!--<a class="nav-link" href="#" th:href="@{/}">Registration and
+					Login Module</a>-->
+		    
+			<span class="ml-auto">
+			<div class="bg-green-600 w-[7px] rounded-full px-3 "><p class="text-white flex justify-center" th:text="${contadorSesiones}"></p></div>
+			<p class="font-bold">Usuario</p>
+			 <span th:text="${username}">N/A</span>
+			<a class="bg-red-600 p-2 rounded hover:text-gray-300 text-xl" th:href="@{/logout}"style="text-decoration: none;">Logout</a>
+			</span>
 </nav>
 <div class="filter brightness-50">
 	<div  id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
         <div id="myCarousel" class="carousel slide " data-ride="carousel">
             <!-- Indicadores -->
-            <ul class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="4"></li>
-            </ul>
+            
 
             <!-- Imágenes del carrusel -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img th:src="@{/img/fondo1.jpg}" class=" d-block w-100" alt="Imagen 1">
-
+                    <img th:src="@{/img/fondo1.webp}" class=" d-block w-100" alt="Imagen 1">
+               
             </div>
 
             <!-- 
@@ -64,29 +61,18 @@
         </div>
     </div></div><br><br>
     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-white text-7xl text-center">
-		Bienvenido a Botpress<br><br>
-		<hr class="h-[3px] bg-white"><br>
-		<p class="font-sans text-2xl">tu marketplace de chatbots<p>
+		Bienvenidos a Botpress<br><br>
+		<hr class="h-[1px] bg-white"><br>
+		<p class="font-sans text-2xl">Compra de Dispositivos<p>
 	</div>
 </div>
    	</header>
 <main class="p-10">    
     
 	
-	
-  <div class="card-body">
-    
-    <p class="card-text text-lg">	
-	¡Bienvenido a Botpress!
-	
-	En el dinámico mundo digital actual, contar con las herramientas adecuadas puede marcar la diferencia entre el éxito y la invisibilidad. En Botpress, nos especializamos en brindarte soluciones tecnológicas innovadoras y personalizadas para llevar tu negocio al siguiente nivel.</p>
-    <br><br><p class="card-text"><small class="text-muted">20/06/2024</small></p>
-  </div>
+
   
-  </div><br><br>
-  <br><br><br>
-	
- </div></div><br><br>	
+>	
   <button class="btn-scrolltop" id="btn_scrolltop">
     <i class="fas fa-chevron-up fa-lg fa-beat"></i>
   </button>

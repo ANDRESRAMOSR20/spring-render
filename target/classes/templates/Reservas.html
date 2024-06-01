@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" th:href="@{/css/Styles.css}">
-    <link rel="shortcut icon" th:href="@{/img/logo.jpg}" type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{/img/logotipo.png}" type="image/x-icon">
      <link rel="stylesheet" th:href="@{/css/Styles.css}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,21 +18,23 @@
 <body class="bg-gradient-to-r from-blue-100 to-blue-200">
 	<header>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a th:href="@{/gestionAdmin}"><img th:src="@{/img/logo.jpg}" class="h-[65px] w-[115px] ml-4 mr-8"></a> 
-   <a class="hover:text-gray-300 text-xl" th:href="@{/salones/salonesvista}" style="text-decoration: none;">Salones</a>&nbsp;&nbsp;&nbsp;
-    <a class="hover:text-gray-300 text-xl" href="#"style="text-decoration: none;">Eventos</a>&nbsp;&nbsp;&nbsp;
-     <a class="hover:text-gray-300 text-xl" th:href="@{/acercadea}"style="text-decoration: none;">Acerca de</a>&nbsp;&nbsp;&nbsp;
-      <a class="hover:text-gray-300 text-xl" th:href="@{/contactanosa}"style="text-decoration: none;">Contactenos</a>&nbsp;&nbsp;&nbsp;
+		<a th:href="@{/gestionAdmin}">
+									    <img th:src="@{/img/logotipo.png}" class="h-[80px] w-[80px] ml-4 mr-8" style="border-radius: 50%; object-fit: cover;">
+									</a>
+   <a class="hover:text-gray-300 text-xl" th:href="@{/salones/salonesvista}" style="text-decoration: none;">Shop</a>&nbsp;&nbsp;&nbsp;
+   
+
+      
       <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-xl" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Gestiones Admin
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  th:href="@{/salones}">Gestion Salon</a>
-                    <a class="dropdown-item" th:href="@{/reservas}">Gestion Reservas</a>
-                    <a class="dropdown-item" th:href="@{/elementos}">Gestion Elementos</a>
-                    <a class="dropdown-item" th:href="@{/inquietudes}">Ver Inquietudes</a>
-                    <a class="dropdown-item"  th:href="@{/blogs}">Gestion blog</a>
+					<a class="dropdown-item"  th:href="@{/salones}">Gestion Productos</a>
+					                    <a class="dropdown-item" th:href="@{/reservas}">Gestion Pedidos</a>
+					                    <a class="dropdown-item" th:href="@{/elementos}">Gestion Servicios</a>
+					                    <a class="dropdown-item" th:href="@{/inquietudes}">Ver Inquietudes</a>
+					                      <a class="dropdown-item" th:href="@{/tarjetas}">Tarjetas de credito</a>
                 </div>
             </div>
       <!--<a class="nav-link" href="#" th:href="@{/}">Registration and
@@ -49,10 +51,10 @@
 <div class="cont">
         <div class="cont_main">
              <a th:href="@{/salones/versalones}"  class="text-white font-sans text-2xl text-white font-sans bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-10 rounded-full"style="text-decoration: none;">
-				Ver salones&nbsp;&nbsp;<i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+				Ver productos&nbsp;&nbsp;<i class="fa-solid fa-plus" style="color: #ffffff;"></i>
             </a><br><br>
              <a th:href="@{/reservas/pdf}" target="_blank" class="text-white font-sans text-2xl text-white font-sans bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 my-10 rounded-full" style="text-decoration: none;">
-				Descargar reservas&nbsp;&nbsp;<i class="fa-solid fa-file-pdf" style="color: #ffffff;"></i>
+				Descargar recibo&nbsp;&nbsp;<i class="fa-solid fa-file-pdf" style="color: #ffffff;"></i>
             </a>
             
             <table class="table table-striped m-3 tab">
@@ -63,8 +65,8 @@
                     <td><strong>Apellido</strong></td>
                     <td><strong>Email</strong></td>
                     <td><strong>Celular</strong></td>
-                    <td><strong>Salon</strong></td>
-                    <td><strong>Fecha reserva</strong></td>
+                    <td><strong>Compra</strong></td>
+                    <td><strong>Fecha Compra</strong></td>
                     <td><strong>Estado</strong></td>
                     <td><strong>Editar</strong></td>
                     <td><strong>Eliminar</strong></td>
